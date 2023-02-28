@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script>src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="cook.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Coock</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg  bg-white shadow py-3 h-auto sticky-top" >
+        <div class="container">
+            <a class="nav-link" href="#">
+                <img src="data:image/png;base64,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" alt="ceva">
+        </a>
+            <button class="navbar-toggler h-100" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" ></span>
+            </button>
+            <div class="collapse navbar-collapse h-100 w-100" id="navbarNav">
+                <ul class="navbar-nav mx-auto  h-100  " style="text-size-adjust: 100%; height: 150px;">
+                    <li class="nav-item" >
+                        <a  class="nav-link h-75  p-5" style="font-size: 200%; "  href="#home" >Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h-75 p-5"  style="font-size: 200%;"  href="#about"  >About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h-75 p-5"  style="font-size: 200%; " href="#menu" >Menu</a>
+                    </li>
+
+                    <li class="nav-item" id="code">
+                        <button type="button" id="aici" onclick="myFunction()"> Reservation</button>
+                    </li>
+                   <!-- <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>-->
+
+                </ul>
+                <a class="btn btn-brand" type="button" data-bs-toggle="modal" id="loginnn" data-bs-target="#logindemo" value="Log in">
+                    Log in</a>
+            </div>
+        </div>
+    </nav>
+    <!--Hero Slider-->
+    <section id="home" >
+        <div id="heroSlider" class="carousel slide pb-2" data-bs-ride="carousel">
+            <div class="carousel-inner" >
+
+
+                <div class="carousel-item text-center bg-cover vh-100 active slide-1"style="background-image: url(https://desertdecasa.ro/wp-content/uploads/2019/12/prajitura-cu-ciocolata-1.jpg);">
+                    
+                    <div class="container h-100 d-flex align-items-center justify-content-center">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8" >
+                              
+                                <h6 class="text-white">WELCOME TO MUUFINS</h6>
+                                <h1 class="display-1 my-3 fw-bold text-white">Simple coockie</h1>
+                                <a class="btn btn-brand" type="button" id="aici12" data-bs-toggle="modal"
+                                    data-bs-target="#logindemo">Log_in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item text-center bg-cover vh-100 slide-2" style="background-image: url(https://www.pensiuneamedeea.ro/Content/6-Cristal-de-lux-placa-de-acas%C4%83-tort-suport-oglinda-193870.jpg);background-size: 100%;">
+                    <div class="container h-100 d-flex align-items-center justify-content-center">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h6 class="text-black">WELCOME TO MUFFINS</h6>
+                                <h1 class="display-1 my-3 fw-bold text-black">Star coockie</h1>
+                                <a class="btn btn-brand" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#logindemo">Log in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!--About-->
+    <section id="about">
+        <div class="container">
+            <div class="row gy-4 align-items-center"style="width: 100%; height: 200%;">
+                <div class="col-lg-3">
+                    <img src="https://adygio.com/wp-content/uploads/2020/10/Prajituri-retete-de-prajituri-simple-usoare-sau-rapide.-Prajituri-clasice-sau-de-post-800x600.jpg"
+                        alt="" >
+                </div>
+            </div class="col-lg-4">
+            <h1>About us</h1>
+            <div class="divider my-4"></div>
+            <p>V-ati intrebat vreodata cand a fost inventat primul desert si mai ales prima prajitura?! Conform
+                scrierilor istorice din acest domeniu, se pare ca prima prajitura a fost inventata cu mii si mii de ani
+                in urma. Cu toate acestea, atat retetele cat si ingredientele primelor prajituri din istorie erau foarte
+                diferite de prajiturile pe care le consumam in secolul vitezei in care ne aflam. Tinand cont de faptul
+                ca in zilele de demult zaharul nu era inventat si mai apoi nu era un produs accesibil oricui este de la
+                sine inteles ca se utilizau alte produse pentru indulcirea prajiturilor.</p>
+            <p>In zilele noastre in cofetarii, patiserii si magazine cu specific alimentar gasim de achizitionat
+                prajituri cu arome, forme si culori care de care mai inedite. Cele mai preferate sunt deserturile care
+                au in componenta lor foarte multe oua, lapte, smantana, frisca, ciocolata si unt. Astfel, indiferent
+                daca discutam despre prajituri facute in casa, despre prajituri create de cofetari iscusiti in lumea
+                intreaga, despre prajituri simple sau in straturi, cu siguranta ca fiecare dintre noi apreciem gustul
+                unui desert bun si sanatos.</p>
+            <a href="#" class="btn btn-brand">Explore the menu</a>
+        </div>
+        </div>
+    </section>
+    <!--Menu-->
+    <section id="menu" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 intro-text">
+                    <h1>Explorer our recepins</h1>
+                    <p>Foarte dulci, mai putin dulci, acre, sarate sau amare, in functie de gusturile si preferintele pe
+                        care le avem fiecare dintre noi in parte, prajiturile au fost sunt si vor fi intotdeauna
+                        deserturile preferate atat de catre cei mici cat si de catre adulti.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all"
+                        type="button" role="tab" aria-controls="pills-all" aria-selected="true">All Items</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-breakfast-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-breakfast" type="button" role="tab" aria-controls="pills-breakfast"
+                        aria-selected="true">Sweet</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-lunch-tab" data-bs-toggle="pill" data-bs-target="#pills-lunch"
+                        type="button" role="tab" aria-controls="pills-lunch" aria-selected="true">Salty</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-dinner-tab" data-bs-toggle="pill" data-bs-target="#pills-dinner"
+                        type="button" role="tab" aria-controls="pills-dinner" aria-selected="true">Spicy</button>
+                </li>
+
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+
+                <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
+                    tabindex="0">
+
+                    <div class="row gy-4">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade show" id="pills-breakfast" role="tabpanel"
+                    aria-labelledby="pills-breakfast-tab" tabindex="0">
+                    <div class="row gy-4">
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show" id="pills-lunch" role="tabpanel" aria-labelledby="pills-lunch-tab"
+                    tabindex="0">
+                    <div class="row gy-4">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show" id="pills-dinner" role="tabpanel" aria-labelledby="pills-dinner-tab"
+                    tabindex="0">
+                    <div class="row gy-4">
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="menu-item bg-white shadow-on-hover">
+                                <div class="menu-item-content p-4">
+                                    <div>
+                                        <span>Rated(5.4)</span>
+                                        <span class="stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="mt-1 mb-2"><a href="#">Fudgy Chewy Brownies</a></h5>
+                                    <p class="small">Baked salmon to a fresh salad made with chickpeas, arugula, herbs
+                                        and olives</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Reservation -->
+
+    <div class="container" id="reservation">
+        <div class="row">
+            <div class="col-12 intro-text">
+                <h1>Book Your Table</h1>
+                <p>Fa o rezervare rapida</p>
+            </div>
+        </div>
+        <form action="#" class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="row g-3">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Full name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" placeholder="Email address">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Date">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Time">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <textarea name="" id="" cols="30" rows="4" class="form-control"
+                            placeholder="Meesage"></textarea>
+                    </div>
+                    <div class="form-group text-center col-md-12">
+                        <a href="#" class="btn btn-brand">Send Message</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button type="button" class="btn btn-brand" id="redirectionare">Catre blog</button>
+    </div>
+    </section>
+
+    <!-- Insta Posts -->
+
+    <!-- Blog Post -->
+    <section id="blog">
+        <div class="container" id="blog1">
+            <div class="row">
+                <div class="col-12 intro-text">
+                    <h1>Blog Posts</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae sint temporibus natus optio
+                        eveniet nobis accusantium?</p>
+                </div>
+            </div>
+            <div class="row gy-4">
+                <div class="col-sm-6">
+                    <div class="blog-post d-flex shadow-on-hover">
+                        <img src="https://www.lauralaurentiu.ro/wp-content/uploads/2022/11/prajitura-marlenka-feat.jpg"
+                            alt="">
+                        <div class="blog-post-content p-4">
+                            <p>Posted: 25 Dec, 2018</p>
+                            <h4><a href="#">How to make delicious food
+                                </a></h4>
+                            <p>Consectetur adipisicing elit. Consequatur, architecto quisquam. Cumque!</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- footer -->
+    <footer class="bg-cover">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-4">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit architecto unde
+                            magnam.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                            <a href="#"><i class="ri-instagram-fill"></i></a>
+                            <a href="#"><i class="ri-youtube-fill"></i></a>
+                            <a href="#"><i class="ri-google-play-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ms-auto">
+                        <h6 class="text-white mb-4">CONTACT</h6>
+                        <p class="mb-1">P:(03) 9283 4726</p>
+                        <p class="mb-1">E:enquiries@mill.co</p>
+                        <p class="mb-0">A: 14 Paramore Street Mornington Peninsula Victoria 3552</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h6 class="text-white mb-4">OPENING HOURS</h6>
+                        <p class="mb-1">PMonday-Friday : 08:00 - 22:00</p>
+                        <p>aturday-Sunday : 08:00 - 22:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row gy-3 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">Copyrights all rights reserved</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    </section>
+    <!--Log in section-->
+    <div id="logindemo" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-bdoy">
+                    
+                    <div class="myform ">
+                        <h1 class="text-center">Login</h1>
+                        <form id="login-form" class="form-control mb-3  mt-3 text-center" >
+                            <div class="mb-3 mt-3">
+                                <label for="email"> Email Address</label>
+                                <input type="email" id="nume" class="form-control">
+
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label for="email"> Password</label>
+                                <input type="password" id="parola123" class="form-control">
+
+                            </div>
+
+                            <button type="button" id="login" class="btn btn-brand text-center ">Login</button>
+
+                            <button type="button" class="btn btn-brand " data-bs-toggle="modal"
+                                data-bs-target="#registration">Inregistreaza-te</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="registration" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-bdoy">
+                    <!--<button type="button" class="btn btn-white" data-bd-dismiss="modal" id="close1"></button> -->
+                    <div class="=myform pl-1" >
+                        <h1 class="text-center">Inregistrare</h1>
+                        <form class="form-control mb-3  mt-3 text-center ">
+                            <div class="mb-3  mt-3">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email">
+
+                            </div>
+                            <div class="mb-3  mt-3">
+                                <label for="email">Password</label>
+                                <input type="password" class="form-control" id="parola">
+
+                            </div>
+                            <button type="button" id="Inregistrare"
+                                class="btn btn-brand text-center ">Inregistreaza-te</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </html>
