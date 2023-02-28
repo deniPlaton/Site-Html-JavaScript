@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;700&display=swap');
+body{
+    font-family: "Spline Sans",sans-serif;
+    color:#787171;
+    line-height:1.7;
+
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+    color: #222;
+
+}
+a {
+    color:#222;
+    text-decoration: all 0.4s;
+    text-size-adjust: 100px;
+
+}
+
+a:hover{
+    color: #ed6cbe;
+
+}
+ul{
+    size: 10px;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+}
+img{
+    min-width:100%;
+}
+section{
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+}
+/*Button*/
+.btn {
+    border: 0;
+    padding: 14px 38px;
+}
+.btn-brand{
+    color:white;
+    background-color: #ec5db0;
+    border-color: #ec5db0;
+    font-weight:500 ;
+}
+.btn-brand:hover {
+    background-color: #ee0f82;
+   border-color: #ee0f91;
+   color:white;
+
+}
+/* Slider*/
+.slide-1{
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) src="https://adygio.com/wp-content/uploads/2020/10/Prajituri-retete-de-prajituri-simple-usoare-sau-rapide.-Prajituri-clasice-sau-de-post-800x600.jpg";
+}
+.bg-cover{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.carousel-control-prev,
+.carousel-control-next{
+    background-color: rgba(233, 105, 161, 0.863);
+    width: 40px;
+    height: 70px;
+    margin: auto;
+}
+/*About*/
+#about .divider{
+    width: 60px;
+    height: 2px;
+    display: block;
+    background-color: #ec5db0;
+
+}
+.intro_text{
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+.intro_text p{
+    max-width: 500px;
+    margin:16px auto 0 auto;
+
+
+}
+.bg-cover{
+    background-color: #ffffff;
+}
+
+.myform{
+    background-color: #b82777;
+}
+.login-form{
+    background-color: white;
+}
+#login-form{
+    background-color: white;
+}
